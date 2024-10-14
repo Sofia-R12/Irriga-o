@@ -1,0 +1,15 @@
+int pinoSensorUmidade = A0;
+
+void setup(){
+  Serial.begin(9600);
+  pinMode (7, OUTPUT);
+  pinMode(A0, INPUT);
+}
+
+ void loop(){
+ pinoSensorUmidade = analogRead(A0);
+ Serial.println (pinoSensorUmidade);
+ if (pinoSensorUmidade >= 490) { digitalWrite (7, HIGH);} 
+ else {digitalWrite (7, LOW);}
+ delay (200);
+}
